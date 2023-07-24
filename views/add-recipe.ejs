@@ -1,0 +1,45 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/add-recipe.css">
+</head>
+<body>
+  <%- include('includes/nav.ejs')  %>
+   
+  
+  <form action="/add-recipe" method="POST" class="form">
+    <h1 class="form_header">Dodaj svoj recept</h1>
+  <div class="form_controll">
+    <label for="name">Naziv</label>
+    <input type="text" id="name" name="name" maxlength="40"  required>
+  </div>
+    
+  <div class="form_controll">
+    <label for="imgUrl">imgUrl</label>
+    <input type="text" id="imgUrl" name="imgUrl" required>
+  </div>
+    
+    <div class="form_controll">
+      <label for="description">Opis</label>
+    <input id="description" name="description" maxlength="60" required>
+    </div>
+    
+    <div class="form_controll">
+    <select id="categoryId" name="categoryId" required>
+      <% for (const category of categories) {%>
+        <option value="<%=category._id%>"><%=category.name%></option>
+        <%}%>
+      
+    </select>
+    </div >
+
+    <div class="form_controll">
+      <label for="sastojak">Sastojak</label>
+    <input id="sastojak" name="sastojak" required>
+    </div>
+
+
+
+  <button type="submit" class="form_action">Submit</button>
+  </div>
+  </form>
+</body>
+</html>
