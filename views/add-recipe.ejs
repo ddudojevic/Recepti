@@ -23,6 +23,7 @@
     </div>
     
     <div class="form_controll">
+      <label for="sastojak">Kategorija</label>
     <select id="categoryId" name="categoryId" required>
       <% for (const category of categories) {%>
         <option value="<%=category._id%>"><%=category.name%></option>
@@ -36,7 +37,22 @@
     <input id="sastojak" name="sastojak" required>
     </div>
 
+    <div class="inputContainer">
+      
+      
+    </div>
 
+    <button type="button" class="addInputButton">+Sastojak</button>
+    <script>
+      document.querySelector(".addInputButton").addEventListener("click", () => {
+        const inputContainer = document.querySelector(".inputContainer");
+        const sastojak = document.createElement("input");
+        sastojak.type = "text";
+        sastojak.name = "sastojak";
+        sastojak.id = "sastojak";
+        inputContainer.appendChild(sastojak);
+      });
+    </script>
 
   <button type="submit" class="form_action">Submit</button>
   </div>

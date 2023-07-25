@@ -19,7 +19,6 @@
   margin-bottom: 1rem;
 }
 
-
 .form_controll {
   display: flex;
   flex-direction: column;
@@ -37,6 +36,36 @@
   border: 1px solid rgb(0, 89, 255);
   border-radius: 3px;
   padding: 0.1rem 0.2rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.addInputButton {
+  color: #eee;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.6rem;
+  width: 100%;
+  background-color: rgb(64, 121, 225);
+  box-shadow: 4px 4px 10px -6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+}
+.addInputButton:hover{
+  background-color: rgb(0, 89, 255);
+  transition: 0.3s;
+}
+
+.inputContainer input {
+  background: transparent;
+  border: 1px solid rgb(0, 89, 255);
+  border-radius: 3px;
+  padding: 0.1rem 0.2rem;
+  margin-bottom: 1rem;
 }
 
 .form_controll textarea {
@@ -63,11 +92,11 @@
   cursor: pointer;
   padding: 0.6rem;
   width: 5rem;
-  background-color: rgb(0, 89, 255);
+  background-color: rgb(64, 121, 225);
   box-shadow: 4px 4px 10px -6px rgba(0, 0, 0, 0.4);
 }
 
 .form_action:hover {
-  background-color: rgb(0, 0, 255);
+  background-color: rgb(0, 89, 255);
   transition: 0.3s;
 }

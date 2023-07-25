@@ -12,7 +12,7 @@
   }
   
   .nav__logo span {
-    color: rgb(0, 89, 255);
+    color: rgb(64, 121, 225);
     font-weight: 500;
   }
   
@@ -32,7 +32,7 @@
   
   .nav__links a:hover {
     text-decoration: none;
-    color: rgb(0, 89, 255);
-    border-bottom: 1px solid rgb(0, 89, 255);
+    color: rgb(64, 121, 225);
+    border-bottom: 1px solid rgb(64, 121, 225);
     transition: 0.3s;
   }

@@ -6,7 +6,7 @@ const recipeSchema = new Schema({
   imgUrl: String,
   description: String,
   categoryId: mongoose.Types.ObjectId,
-  sastojak: String,
+  sastojak: [String],
 });
 
 mongoose.model("recipes", recipeSchema);
