@@ -6,24 +6,18 @@
 
     <div class="two_third">
         <div class="recipe_info">
-        <h2 class="recipe_header"><%= recipe.name %></h2>
-        <p class="recipe_categoryId">
-            <% const categoryId = recipe.categoryId; %>
-            <% const category = categories.find(cat => cat._id.toString() === categoryId.toString()); %>
-            <% if (category) { %>
-              <%= category.name %>
-            <% } else { %>
-              Kategorija nije pronađena
-            <% } %>
-          </p>
-
-          <div>
+            <h2 class="recipe_header"><%= recipe.name %></h2>
+                <p class="recipe_categoryId">
+                <% const categoryId = recipe.categoryId; %>
+                <% const category = categories.find(cat => cat._id.toString() === categoryId.toString()); %>
+                <%= category.name %>
+                </p>
         
-            <a href="/recipe/<%= recipe._id %>" class="read_more_btn">Više</a>
-          </div>
+            <div>
+                <a href="/recepti/<%= recipe._id %>" class="read_more_btn">Više</a>
+            </div>
         </div>
+        
+        <span class="likes">Likes: <%=recipe.likes%></span>
     </div>
-  
-  
-  
 </li>

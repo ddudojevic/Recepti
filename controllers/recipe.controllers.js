@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Recipe = mongoose.model("recipes");
 const Category = mongoose.model("categories");
+const Comment = mongoose.model("comments");
 
 exports.getRecipes = async (req, res) => {
   const recipes = await Recipe.find();
@@ -17,7 +18,7 @@ exports.getAddRecipe = async (req, res) => {
   const categories = await Category.find();
   res.render("add-recipe", {
     pageTitle: "Dodaj recept",
-    path: "/add-recipe",
+    path: "/dodaj-recept",
     categories,
   });
 };
@@ -25,5 +26,19 @@ exports.getAddRecipe = async (req, res) => {
 exports.postAddRecipe = async (req, res) => {
   const { name, imgUrl, description, categoryId, sastojak } = req.body;
   await Recipe.create({ name, imgUrl, description, categoryId, sastojak });
-  res.redirect("/recipes");
+  res.redirect("/recepti");
 };
+
+exports.getRecipe = async (req, res) => {
+  const recipeId = req.params.id;
+  const recipe = await Recipe.findById(recipeId);
+  const comments = await Comment.find({recipeId: recipeId});
+  res.render("recipe-details", {
+    pageTitle: recipe.name,
+    path: "/recept/:id",
+    recipe,
+    comments,
+  });
+};
+
+

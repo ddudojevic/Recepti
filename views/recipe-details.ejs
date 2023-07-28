@@ -1,0 +1,41 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/recipe-details.css">
+</head>
+<body>
+  <body>
+    <div class="post-details">
+      <%- include('includes/nav.ejs') %>
+  
+      <div class="img_div">
+        <img src="<%=recipe.imgUrl%>" class="detail_img" />
+      </div>
+      <div class="detail_header">
+        <h1><%= recipe.name %></h1>
+      </div>
+      <div class="recipe_info">
+      <div class="detail_description">
+        <h3>OPIS:</h3>
+        <p>-<%= recipe.description %></p>
+       
+        <h3>Sastojci</h3>
+        <p>-<%= recipe.sastojak %></p>
+      </div>
+      <form action="/recepti/<%= recipe._id %>/like" method="POST" class="likebtn">
+        <button type="submit" class="likeButton">Like</button>
+      </form>
+    </div>
+      
+  
+      
+  
+      <%- include('includes/comment.ejs') %>
+      <div>
+        <% for (const comment of comments) { %>
+        <ul class="comments">
+          <li>
+            <p><%= comment.comment %></p>
+          </li>
+        </ul>
+        <% } %>
+      </div>
+    </div>

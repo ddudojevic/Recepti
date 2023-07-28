@@ -1,0 +1,14 @@
+<form action="/recepti/<%=recipe._id%>/comment" method="POST" class="comment">
+  <div class="comment_header">
+    <h1>Komentari:</h1>
+  </div>
+
+  <div class="comment_controll">
+    <label for="comment">Unesi svoj komentar:</label>
+    <textarea id="comment" name="comment" required></textarea>
+
+    <div class="comment_action">
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+</form>

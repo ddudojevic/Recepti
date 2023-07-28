@@ -7,6 +7,10 @@ const recipeSchema = new Schema({
   description: String,
   categoryId: mongoose.Types.ObjectId,
   sastojak: [String],
+  likes: {
+    type: Number,
+    default: 0,
+  },
 });
 
 mongoose.model("recipes", recipeSchema);
