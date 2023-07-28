@@ -16,14 +16,12 @@ require("./models/category");
 const recipesRoutes = require("./routes/recipe.routes");
 const commentRoutes = require("./routes/comment.routes");
 const likeRoutes = require("./routes/likes.routes");
+const errorRoutes = require("./routes/error.routes");
 
 app.use(recipesRoutes);
 app.use(commentRoutes);
 app.use(likeRoutes);
-
-app.get("*", (req, res) => {
-  res.redirect("/recepti");
-});
+app.use(errorRoutes);
 
 mongoose
   .connect("mongodb://127.0.0.1:27017/recipesaai")

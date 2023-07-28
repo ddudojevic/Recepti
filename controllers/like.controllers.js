@@ -8,5 +8,6 @@ exports.postLikes = async (req, res) => {
       { $inc: { likes: 1 } },
       { new: true }
     );
+    
     res.redirect("/recepti/" + recipeId);
   };

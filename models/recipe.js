@@ -11,6 +11,10 @@ const recipeSchema = new Schema({
     type: Number,
     default: 0,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 mongoose.model("recipes", recipeSchema);
